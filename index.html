@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RescueFour — four-bar rescue pocket</title>
+  <meta name="description" content="Four live-instrument bars that turn an unfinished loop or blank session into a shippable core." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<main>
+  <p class="eyebrow">WorkinWithAI · live chairs</p>
+  <h1>RescueFour</h1>
+  <p class="lead">Four-bar rescue pocket. Unfinished beats sit because the core never locks. RescueFour writes a complete 4-bar pocket — kit, upright, piano, nylon, optional violin — over your BPM, key, and 4-chord progression. Drop the WAV + MIDI into your DAW and finish.</p>
+  <p class="status" id="status">Tap to start audio…</p>
+  <p class="eyebrow">Settings (persist)</p>
+  <div class="controls">
+    <label>BPM <input type="number" id="bpm" min="60" max="180" value="98" /></label>
+    <label>Key <select id="key"><option>A minor</option><option>C major</option><option>E major</option><option>D minor</option><option>G major</option></select></label>
+    <label>Chords (4) <input type="text" id="chords" value="Am F C G" /></label>
+  </div>
+  <p class="eyebrow">Recipe</p>
+  <div class="row" id="recipes"></div>
+  <p class="eyebrow">Pocket · bars 1–4</p>
+  <div class="bars" id="bars"></div>
+  <h2>Punch list</h2>
+  <pre id="punch"></pre>
+  <p class="note">iOS silent switch mutes Web Audio. Hardware MIDI keyboard supported (Web MIDI).</p>
+</main>
+<div class="dock">
+  <button id="play">Play</button>
+  <button class="ghost" id="stop">Stop</button>
+  <button class="ghost" id="export">Export WAV + MIDI</button>
+  <button class="ghost" id="copy">Copy punch</button>
+</div>
+<script src="./app.js"></script>
+</body>
+</html>
