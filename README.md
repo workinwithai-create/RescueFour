@@ -10,12 +10,19 @@ Distinct from TagFour (last-line end tag), LiftTwo (pre-hook lift), PreEight (pr
 
 ## Pricing
 
-One-time **$19** on Gumroad (or Lemon Squeezy). This is a finite desk, not a cloud meter. Do not subscribe. Forge Pass stays for the recurring tools.
-
-Best place to sell: Gumroad, next to other indie music desks. Pin a short demo on X.
+**Free.** (Finite desk; no subscription. Forge Pass remains for the recurring tools.)
 
 ## License
 
-MIT. Free to use; if priced, add a Lemon Squeezy / Gumroad key check or keep the README as "free".
+MIT. Free to use.
 
 Built for workinwithai-create.
+
+## Audio engine compliance
+
+- Lookahead scheduler on AudioContext clock (LOOKAHEAD_MS=25, SCHEDULE_AHEAD=0.12)
+- Live mutable state read every step; changes within one bar; immediate stop
+- OfflineAudioContext export: first downbeat at sample 0, exact length Math.round(bars*4*60/bpm*sampleRate), tail folded, 48 kHz 24-bit stereo, peak ≤ −1 dBFS, matching multi-track MIDI
+- User BPM 60–180 + key + 4-chord persist in localStorage
+- Samples pinned to PreEight@d58301e4a494555f411a2afbc448b724136eee76
+- Pitch shift clamped ±4 semitones with revoicing
